@@ -32,5 +32,9 @@ describe("Retrieve a Pokemon URL", () => {
         let result = await getPokemonPictureUrl(25);
 
         expectedImageUrl(result).toEqual(expectedImageUrl);
-    })
+    });
+
+    afterEach(() => {
+        globalThis.fetch.mockClear();
+    });
 })
